@@ -45,10 +45,10 @@ mod raw {
 // From termios.h
 #[repr(C)]
 pub struct WinSize {
-    ws_row: c_ushort,
-    ws_col: c_ushort,
-    ws_xpixel: c_ushort,
-    ws_ypixel: c_ushort,
+    pub ws_row: c_ushort,
+    pub ws_col: c_ushort,
+    pub ws_xpixel: c_ushort,
+    pub ws_ypixel: c_ushort,
 }
 
 pub fn get_winsize<T>(slave: &T) -> io::Result<WinSize> where T: AsRawFd {
